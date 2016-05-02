@@ -13,16 +13,20 @@ class Property:
         #price = cost*a + b
         for i in range(maxSlot):
             self.priceList.append(self.cost*coeffAList[i] + coeffBList[i])
-        self.priceList.sort().reverse()
+        self.priceList.sort()
+        self.priceList.reverse()
 
     def get_priceList(self):
         return self.priceList
 
     def transcation_occur(self, price):
-        self.profit += price - cost
+        self.profit += price - self.cost
         self.availability -= 1
         self.totalRound += 1
         self.successRound += 1
+
+    def firstRound_denial(self):
+        self.totalRound += 1
 
     def get_successRate(self):
         if self.totalRound != 0:

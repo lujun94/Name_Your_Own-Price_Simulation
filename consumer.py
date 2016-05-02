@@ -13,11 +13,12 @@ class Consumer:
         for star in self.valueDict.keys():
             # bid = value*a - b
             self.bidDict[star] = self.valueDict[star]*bidCoeffA + bidCoeffB
+        self.set_sortedBidList()
 
     def get_bidList(self):
         return self.bidDict
 
-    def set_sortedbidList(self):
+    def set_sortedBidList(self):
         expectedUList = []
         for star in self.valueDict.keys():
             expectedU = self.valueDict[star] - self.bidDict[star]
@@ -26,10 +27,10 @@ class Consumer:
         self.sortedBidList = sorted(expectedUList)
 
     def get_sortedBidList(self):
-        return sortedBidList
+        return self.sortedBidList
 
-    def transcation_occur(self, price):
-        self.utility += value - price
+    def transcation_occur(self, star, price):
+        self.utility += self.valueDict[star] - price
 
     
 
