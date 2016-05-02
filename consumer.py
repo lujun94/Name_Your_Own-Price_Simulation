@@ -4,6 +4,7 @@ class Consumer:
         self.valueDict = valueDict
         self.bidDict = {}
         self.sortedBidList = []
+        self.utility = 0
 
     def valueList(self):
         return self.valueDict
@@ -21,7 +22,16 @@ class Consumer:
         for star in self.valueDict.keys():
             expectedU = self.valueDict[star] - self.bidDict[star]
             expectedUList.append((expectedU, star))
+        #sort the list in the order to expected utility
         self.sortedBidList = sorted(expectedUList)
+
+    def get_sortedBidList(self):
+        return sortedBidList
+
+    def transcation_occur(self, price):
+        self.utility += value - price
+
+    
 
         
             
