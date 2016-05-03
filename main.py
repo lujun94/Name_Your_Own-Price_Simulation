@@ -53,9 +53,9 @@ def run(numOfConsumer, conCoeffA, conCoeffB, numOfPro, proCoeffAList,
     return (priceline.profit, aveConU, aveProProfit)
 
 def main():
-    iterNum = 10
+    iterNum = 200
     print "iterate", iterNum, "times"
-    numOfConsumer = 20
+    numOfConsumer = 60
     numOfPro = 20
     print "number of consumer: ", numOfConsumer
     print "number of property: ", numOfPro
@@ -76,7 +76,7 @@ def main():
     pricelineProfit = 0
     sumConU = 0
     sumProU = 0
-    for i in range(10):
+    for i in range(iterNum):
         pp, ac, ap = run(numOfConsumer, conCoeffA, conCoeffB, numOfPro,
                          proCoeffAList, proCoeffBList, maxPriceSlot)
         pricelineProfit += pp
